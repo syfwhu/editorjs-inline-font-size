@@ -5,7 +5,7 @@ class FontSizeTool {
   static title = 'Font Size';
   isDropDownOpen = false;
   togglingCallback = null;
-  emptyString = '&nbsp;&nbsp';
+  emptyString = '字号';
   fontSizeDropDown = 'font-size-dropdown';
 
   static get sanitize() {
@@ -57,7 +57,7 @@ class FontSizeTool {
     this.createSvg = this.svg('toggler-down', 13, 13);
     this.nodes.button.appendChild(this.createSvg);
   }
-  
+
   getFontSizeForButton() {
     this.buttonWrapperText = this.make('div', 'button-wrapper-text');
     const displaySelectedFontSize = this.make('div');
@@ -174,7 +174,7 @@ class FontSizeTool {
 
   replaceFontSizeInWrapper(size) {
     const displaySelectedFontSize = document.getElementById(this.fontSizeDropDown);
-    displaySelectedFontSize.innerHTML = size;
+    displaySelectedFontSize.innerHTML = `${size}px`;
   }
 
   clear() {
